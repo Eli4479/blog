@@ -3,26 +3,35 @@ import "./App.css";
 import From_app from "./form";
 import BlogList from "./list";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-const blogs = [
-  {
-    id: 1,
-    title: "First Blog",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    id: 2,
-    title: "Second Blog",
-    content:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-  },
-  {
-    id: 3,
-    title: "Third Blog",
-    content:
-      "Fusce consequat dui nec augue fermentum, vel fermentum libero fermentum.",
-  },
-];
+import { useEffect, useState } from "react";
+// const blogs = [
+//   {
+//     id: 1,
+//     title: "First Blog",
+//     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+//   },
+//   {
+//     id: 2,
+//     title: "Second Blog",
+//     content:
+//       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+//   },
+//   {
+//     id: 3,
+//     title: "Third Blog",
+//     content:
+//       "Fusce consequat dui nec augue fermentum, vel fermentum libero fermentum.",
+//   },
+// ];
 function App() {
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3001/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        setBlogs(data);
+      });
+  }, []);
   return (
     <div className="">
       <Router>
