@@ -7,7 +7,7 @@ const From_app = () => {
   const post = async () => {
     // e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3001/blogs", {
+      const res = await fetch("https://blog-1-ki7f.onrender.com/blogs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

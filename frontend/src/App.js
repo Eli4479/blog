@@ -26,7 +26,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/blogs")
+    fetch("https://blog-1-ki7f.onrender.com/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);

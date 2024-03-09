@@ -12,7 +12,7 @@ const BlogList = ({ blogs }) => {
             className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md"
             onClick={() => {
               console.log(blog._id);
-              fetch(`http://localhost:3001/blogs/${blog._id}`, {
+              fetch(`https://blog-1-ki7f.onrender.com/blogs/${blog._id}`, {
                 method: "DELETE",
               });
               window.location.reload();
