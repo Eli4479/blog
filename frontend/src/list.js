@@ -8,16 +8,7 @@ const BlogList = ({ blogs }) => {
         <div key={blog._id} className="border p-4 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
           <p>{blog.content}</p>
-          <button
-            className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md"
-            onClick={() => {
-              console.log(blog._id);
-              fetch(`https://blog-1-ki7f.onrender.com/blogs/${blog._id}`, {
-                method: "DELETE",
-              });
-              window.location.reload();
-            }}
-          >
+          <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md">
             Delete
           </button>
         </div>
